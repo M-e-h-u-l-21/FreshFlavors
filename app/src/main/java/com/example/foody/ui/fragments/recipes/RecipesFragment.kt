@@ -1,14 +1,16 @@
 package com.example.foody.ui.fragments.recipes
 
 import android.os.Bundle
+import android.view.FrameMetrics
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.foody.R
+import com.example.foody.databinding.FragmentRecipesBinding
 import com.todkars.shimmer.ShimmerRecyclerView
 
-class recipesFragment : Fragment() {
+class RecipesFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
