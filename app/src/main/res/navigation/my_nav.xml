@@ -9,15 +9,48 @@
         android:id="@+id/recipesFragment"
         android:name="com.example.foody.ui.fragments.recipes.RecipesFragment"
         android:label="Recipes"
-        tools:layout="@layout/fragment_recipes" />
+        tools:layout="@layout/fragment_recipes" >
+        <action
+            android:id="@+id/action_recipesFragment_to_recipesBottomsheet"
+            app:destination="@id/recipesBottomsheet" />
+        <argument
+            android:name="backFromBottomSheet"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <action
+            android:id="@+id/action_recipesFragment_to_detailsActivity"
+            app:destination="@id/detailsActivity" />
+    </fragment>
     <fragment
         android:id="@+id/favoriteRecipesFragment"
-        android:name="com.example.foody.ui.fragments.favorite.favoriteRecipesFragment"
+        android:name="com.example.foody.ui.fragments.favorite.FavoriteRecipesFragment"
         android:label="Favorite"
-        tools:layout="@layout/fragment_favorite_recipes" />
+        tools:layout="@layout/fragment_favorite_recipes" >
+        <action
+            android:id="@+id/action_favoriteRecipesFragment_to_detailsActivity"
+            app:destination="@id/detailsActivity" />
+    </fragment>
     <fragment
         android:id="@+id/foodJokeFragment"
-        android:name="com.example.foody.ui.fragments.foodjoke.foodJokeFragment"
+        android:name="com.example.foody.ui.fragments.foodjoke.FoodJokeFragment"
         android:label="Food Joke"
         tools:layout="@layout/fragment_food_joke" />
+    <dialog
+        android:id="@+id/recipesBottomsheet"
+        android:name="com.example.foody.ui.fragments.recipes.bottomsheet.RecipesBottomsheet"
+        android:label="recipes_bottomsheet"
+        tools:layout="@layout/recipes_bottomsheet" >
+        <action
+            android:id="@+id/action_recipesBottomsheet_to_recipesFragment"
+            app:destination="@id/recipesFragment" />
+    </dialog>
+    <activity
+        android:id="@+id/detailsActivity"
+        android:name="com.example.foody.ui.DetailsActivity"
+        android:label="Details"
+        tools:layout="@layout/activity_details" >
+        <argument
+            android:name="result"
+            app:argType="com.example.foody.models.Result" />
+    </activity>
 </navigation>

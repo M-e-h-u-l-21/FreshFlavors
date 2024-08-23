@@ -6,6 +6,7 @@ import com.example.foody.MyApplication
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -16,7 +17,7 @@ import javax.inject.Singleton
 //Created because we want to provide instance of our retrofit to our remote data source and hilt will do that for us
 
 @Module
-@InstallIn(MyApplication::class)  // All bindings will be present in application component
+@InstallIn(SingletonComponent::class)  // All bindings will be present in application component
 object NetworkModule {
 
     @Singleton

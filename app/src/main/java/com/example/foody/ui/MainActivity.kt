@@ -12,7 +12,9 @@ import com.example.foody.R
 import com.example.foody.databinding.ActivityMainBinding
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var navController:NavController
     private lateinit var MainBinding : ActivityMainBinding

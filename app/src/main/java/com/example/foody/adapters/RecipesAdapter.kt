@@ -48,6 +48,7 @@ class RecipesAdapter : RecyclerView.Adapter<RecipesAdapter.MyViewHolder>() {
         val recipesDiffUtil = RecipesDiffUtil(recipes,newData.results)
         val diffUtilResult = DiffUtil.calculateDiff(recipesDiffUtil)
         recipes = newData.results
+        println(recipes)
         diffUtilResult.dispatchUpdatesTo(this) // Give updates to this adapter
     }
 }

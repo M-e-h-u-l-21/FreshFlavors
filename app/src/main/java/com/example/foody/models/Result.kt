@@ -1,9 +1,13 @@
 package com.example.foody.models
 
 
+import android.os.Parcelable
 import com.example.foody.models.ExtendedIngredient
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
+import kotlinx.android.parcel.RawValue
 
+@kotlinx.parcelize.Parcelize // Added this so we can parcel it while moving from home screen page to a particular recipe page in nav graph arguments
 data class Result(
     @SerializedName("aggregateLikes")
     val aggregateLikes: Int,
@@ -12,7 +16,7 @@ data class Result(
     @SerializedName("dairyFree")
     val dairyFree: Boolean,
     @SerializedName("extendedIngredients")
-    val extendedIngredients: List<ExtendedIngredient>,
+    val extendedIngredients: @kotlinx.parcelize.RawValue List<ExtendedIngredient>,
     @SerializedName("glutenFree")
     val glutenFree: Boolean,
     @SerializedName("id")
@@ -22,7 +26,7 @@ data class Result(
     @SerializedName("readyInMinutes")
     val readyInMinutes: Int,
     @SerializedName("sourceName")
-    val sourceName: String,
+    val sourceName: String?,
     @SerializedName("sourceUrl")
     val sourceUrl: String,
     @SerializedName("summary")
@@ -35,4 +39,4 @@ data class Result(
     val vegetarian: Boolean,
     @SerializedName("veryHealthy")
     val veryHealthy: Boolean,
-)
+): Parcelable
